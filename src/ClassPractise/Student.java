@@ -31,6 +31,8 @@ public class Student {
         this.ID = ID;
     }
 
+
+
     public String getMajor() {
         return major;
     }
@@ -41,5 +43,15 @@ public class Student {
 
     public double getGPA() {
         return GPA;
+    }
+
+    public Student() {
+    }
+
+    public Student(String name, String ID, String major, double GPA) {
+        this.name = name;
+        this.ID = ID;
+        this.major = major;
+        this.GPA = GPA;
     }
 }

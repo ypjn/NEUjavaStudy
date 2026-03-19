@@ -7,6 +7,14 @@ public class Test {
         Student s = new Student();
         Scanner sc = new Scanner(System.in);
         String name = s.getName();
+        System.out.println("Name: " + name);
+        String ID = s.getID();
+        System.out.println("ID: " + ID);
+        String major = s.getMajor();
+        System.out.println("Major: " + major);
+        double GPA = s.getGPA();
+        System.out.println("GPA: " + GPA);
+
 
     }
 }
