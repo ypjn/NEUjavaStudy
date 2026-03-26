@@ -68,12 +68,12 @@ public class MovieTicket {
     }
 
     public void printTicketInfo() {
-        System.out.println("=== 电影票信息 ===");
+        System.out.println("==== 电影票信息 ====");
         System.out.println("票号：" + ticketNumber);
         System.out.println("电影名称：" + movieName);
         System.out.println("放映时间：" + screenTime);
         System.out.println("座位号：" + seatNumber);
         System.out.println("原价：" + price + " 元");
-        System.out.println("================");
+        System.out.println("====================");
     }
 }
