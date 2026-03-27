@@ -4,10 +4,11 @@ public class RedPocket {
     // 基本信息
     String title;                    // 红包标题/祝福语
     double amount;                   // 红包金额
+    int[] redbag_title;              // 红包编号数组
     
     // 用户信息
-    String senderName;               // 发送者姓名
-    String getterName;               // 接收者姓名
+    String senderName;               // 发送者
+    String getterName;               // 接收者
     
     // 状态管理
     boolean isSent;                  // 是否已发送
@@ -45,6 +46,10 @@ public class RedPocket {
         this.amount = amount;
     }
     
+    public void setRedbag_title(int[] redbag_title) {
+        this.redbag_title = redbag_title;
+    }
+    
     public void setSenderName(String senderName) {
         this.senderName = senderName;
     }
@@ -68,6 +73,10 @@ public class RedPocket {
     
     public double getAmount() {
         return amount;
+    }
+    
+    public int[] getRedbag_title() {
+        return redbag_title;
     }
     
     public String getSenderName() {
@@ -155,16 +164,16 @@ public class RedPocket {
     
     public void open() {
         if (!isReceived) {
-            System.out.println("请先领取红包！");
+            System.out.println("请领取红包！");
             return;
         }
         this.isOpened = true;
         System.out.println("红包已打开，金额：" + amount);
     }
     
-    // ==================== 信息显示方法 ====================
+    // ==================== 信息的显示方法 ====================
     public void showInfo() {
-        System.out.println("=== 红包信息 ===");
+        System.out.println("==== 红包信息 ====");
         System.out.println("ID: " + id);
         System.out.println("标题：" + title);
         System.out.println("金额：" + amount);
