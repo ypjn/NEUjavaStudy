@@ -5,30 +5,19 @@ public class RedPocket {
     String title;                    // 红包标题/祝福语
     double amount;                   // 红包金额
     int[] redbag_title;              // 红包编号数组
-    
-    // 用户信息
     String senderName;               // 发送者
     String getterName;               // 接收者
-    
-    // 状态管理
     boolean isSent;                  // 是否已发送
     boolean isReceived;              // 是否已领取
     boolean isOpened;                // 是否已打开
-    
-    // 时间信息
     long createTime;                 // 创建时间戳
     long receiveTime;                // 接收时间戳
     long expireTime;                 // 过期时间
-    
-    // 唯一标识
     int id;                          // 红包 ID
     static int idCounter = 0;        // ID 计数器
-    
-    // 其他属性
     String message;                  // 留言/备注
     int packetType;                  // 红包类型
-    
-    // 构造方法
+
     public RedPocket() {
         this.id = ++idCounter;
         this.createTime = System.currentTimeMillis();
@@ -36,8 +25,6 @@ public class RedPocket {
         this.isReceived = false;
         this.isOpened = false;
     }
-    
-    // ==================== 设置类方法 ====================
     public void setTitle(String title) {
         this.title = title;
     }
@@ -65,8 +52,9 @@ public class RedPocket {
     public void setExpireTime(long expireTime) {
         this.expireTime = expireTime;
     }
-    
-    // ==================== 获取类方法 ====================
+
+
+
     public String getTitle() {
         return title;
     }
@@ -110,8 +98,7 @@ public class RedPocket {
     public int getPacketType() {
         return packetType;
     }
-    
-    // ==================== 状态查询方法 ====================
+
     public boolean isSent() {
         return isSent;
     }
@@ -127,8 +114,11 @@ public class RedPocket {
     public boolean isExpired() {
         return System.currentTimeMillis() > expireTime;
     }
-    
-    // ==================== 核心业务方法 ====================
+
+
+
+
+    //发送红包，领取红包等主要功能
     public void send() {
         if (amount <= 0) {
             System.out.println("金额无效，发送失败！");
